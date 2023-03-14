@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container-fluid !direction !spacing">
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col  ">
+                <div class="card" style="width:18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Payment Form</h5>
+                    <h6 class="card-subtitle mb-2 text-muted ">enter payment detail</h6>
+                    <p class="card-text mt-5">
+                        {{form.as_p}}
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form id="paymentForm">
+<div class="container-fluid !direction !spacing  orm-center">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+        <div class="col  ">
+            <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              <div class="card-body ">
+                  <h5 class="card-title">CHECKOUT</h5>
+                  <h6 class="card-subtitle mb-2 text-muted ">Please check details before proceeding</h6>
+                    <p class="card-text mt-5">
+                      <p>AMOUNT -<div class="btn btn-success"><span>&#8358;</span>{{payment.amount_norm}}</div></p>
+                      <hr>
+                      <p>EMAIL -<div class="btn btn-success">{{payment.email}}</div></p>
+                      <hr>
+                      <p>DATE CREATED -<div class="btn btn-success">{{payment.date_created}}</div></p>
+                    </p>
+                
+              </div>
+              <div class="card-footer mt-5">
+                <button class="btn btn-outline-primary d-flex justify-content-center" onclick="paywithPaystack()" id="django-paymentForm">PAY</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
+
+</form>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script>
+   const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    function payWithPaystack(e) {
+        e.preventDefault();
+        let handler = PaystackPop.setup({
+           key: '{{paystack_public_key}}', // Replace with your public key
+        email: '{{payment.email}}',
+        amount: '{{payment.amount_value}}',
+        ref: '{{payment.ref}}', 
+        // label: "Optional string that replaces customer email"
+        onClose: function(){
+                alert('Window closed.');
+        },
+        callback: function(response){
+           window.location.href = "{% url "verify"%}";
+        }
+      });
+      
+        handler.openIframe();
+} 
+</script>
+
+{% endblock content %}  

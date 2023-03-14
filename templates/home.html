@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{%load static%}
+
+
+{%block content%}
+<div class="container-fluid !direction !spacing mt-5">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} orm-center">
+            <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              
+              <div class="card-body ">
+                <h5 class="card-title">GET TICKET</h5>
+                <h6 class="card-subtitle mb-2 text-muted ">read more</h6>
+                <p class="card-text mt-5">Buy Ticket for Parties from Anywhere Anytime..</p>
+                
+              </div>
+              <div class="card-footer mt-5"><a class="btn btn-outline-primary d-flex justify-content-center" href={%url "method"%}>BUY</a></div>
+            </div>
+        
+    </div>
+</div>
+{%endblock%}
