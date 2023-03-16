@@ -35,4 +35,4 @@ urlpatterns = [
     path('activate/<str:id>',views.activateticket , name="activate"),
     path('ticket-type',views.tickettype , name="tickettype"),
 
-]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+]
