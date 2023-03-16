@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{%load static%}
+
+
+{%block content%}
+<div class="container-fluid !direction !spacing mt-5">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} orm-center">
+    {%for obj in ticket%}
+            <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              
+              <div class="card-body ">
+                <h5 class="card-title">ACCESS FEE</h5>
+                <h6 class="card-subtitle mb-2 text-muted "><span>&#8358;</span>{{obj.regular}}</h6>
+                
+                
+                
+              </div>
+              <div class="card-footer mt-5"><a class="btn btn-outline-warning d-flex justify-content-center" href={%url "initiate-payment"%}>BUY TICKET</a></div>
+              </div>
+               <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              
+              <div class="card-body ">
+                <h5 class="card-title">SPECIAL RESERVAATION FOR 3</h5>
+                <h6 class="card-subtitle mb-2 text-muted "><span>&#8358;</span>{{obj.vip}}</h6>
+                             
+                
+              </div>
+              <div class="card-footer mt-5"><a class="btn btn-outline-warning d-flex justify-content-center" href={%url "initiate-paymentvip"%}>BUY TICKET</a></div>
+              </div>
+               <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              
+              <div class="card-body ">
+                <h5 class="card-title">SPECIAL RESERVAATION FOR 5</h5>
+                <h6 class="card-subtitle mb-2 text-muted "><span>&#8358;</span>{{obj.vip_premium}}</h6>
+                
+                
+                
+              </div>
+              <div class="card-footer mt-5"><a class="btn btn-outline-warning d-flex justify-content-center" href={%url "initiate-paymentpremium"%}>BUY TICKET</a></div>
+              </div>
+     {%endfor%}   
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends "login.html" %}
+{%load static%}
+
+{%block login%}
+
+<form action={%url 'sign_up'%} method=POST>{%csrf_token%}
+
+    <p>email:{{form.username}}</p>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <p>Create A ticket Account to access ticket anytime anywhere</p>
+        <p><a class="btn btn-sm btn-outline-success" href={%url "sign_in"%}>Already have an account</a></p>
+    <button type="button" class="btn-close btn-outline-success" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+    <p>PASSWORD:{{form.password1}}</p>
+    <p>VERIFY PASSWORD:{{form.password2}}</p>
+    <br/>
+    <button type="submit" class="btn btn-primary mt-4">CREATE</button>
+</form>
+{%endblock%}

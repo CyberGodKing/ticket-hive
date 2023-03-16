@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%load static%}
+
+
+{%block content%}
+<div class="container-fluid !direction !spacing my-5">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} orm-center">
+            <div class="card mx-4 mt-5  cc " style="width:18rem;">
+              
+              <div class="card-body ">
+                <h5 class="card-title">Error Log</h5>
+                <h6 class="card-subtitle mb-2 text-muted ">sorry for incovenience</h6>
+                <p class="card-text mt-5">this error might be due to slow network or server error</p>
+                <p class="card-text mt-5">please refresh your network and click the reload button below</p>
+                <p class="card-text mt-5">please do not leave page unless redirected</p>
+              </div>
+              <div class="card-footer mt-5"><a class="btn btn-outline-primary d-flex justify-content-center" href={%url "verify"%}>RELOAD</a></div>
+            </div>
+        
+    </div>
+</div>
+{%endblock%}

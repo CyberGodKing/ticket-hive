@@ -1,0 +1,9 @@
+ {%load staticc%}
+ body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position : center center ;
+    /*backdrop-filter: blur(100px);*/
+}

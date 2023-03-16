@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container-fluid !direction !spacing orm-center">
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col  ">
+                <form action="" method="POST">{% csrf_token %}
+                   <div class="card mx-4 mt-5  cc " style="width:18rem;">        
+                      <div class="card-body ">
+                        <h5 class="card-title">Payment Form</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">fill properly</h6>
+                        <p class="card-text mt-5">Price Per Ticket -<a class="btn btn-sm btn-success"><span>&#8358;</span>{{price}}</a></p>
+                        <div class="col mt-3">{{payment_form}}</div>
+                      </div>
+                      <div class="card-footer mt-5"><input type="submit"  class="btn btn-outline-success" value="PROCEED"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+ <h4>Purchase Ticket</h4>
+                  

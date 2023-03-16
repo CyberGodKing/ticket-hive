@@ -1,0 +1,57 @@
+{%load static%}
+
+  <div class="container-fluid ">
+  <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+  <div class="col-12  ">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 rounded">
+
+      <a class="navbar-brand"%x"" href="#">
+        <h3 class="mx-5">FUPRE MATIRC PARTY</h3>
+      </a>
+      <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
+          <li class="nav-item d-flex active">
+           <a class="nav-link" href={%url 'home'%}>Home</a>
+         </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">PAGES</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">BLOG </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn btn-sm btn-outline-primary nav-link mx-5" href="#">Policy</a>
+          </li>
+          <li class="nav-item">
+           
+            <a class="btn btn-sm btn-outline-warning mx-5 mt-2"  href={% url "ticket"%}>My Tickets</a>
+       
+          </li>
+
+        </li>
+         <ul>
+     
+        
+      {% if request.user.is_authenticated == True %}
+          <form class="d-flex mx-5">
+            <button class="btn btn-primary btn-sm mx-2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/> </svg> </button>
+            <input class="form-control cc me-2 d-flex" type="search" placeholder="Search" aria-label="Search">
+          </form>
+        {% else %}
+            
+        {% endif %}
+     </div>
+</nav>
+</div>
+</div>
+</div>

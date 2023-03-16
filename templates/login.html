@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{%block content%}
+    <div class="container-fluid !direction !spacing mt-5 orm-center">
+
+      <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-lg-center,|}">
+        <div class="col  ">
+            <div class="card cc my-5" style="width:18rem;">
+              <div class="card-body">
+              <div class="row">
+              <div class="col card-title">
+                <a class="btn btn-sm btn-outline-primary" href={% url "sign_in" %}>LOGIN</a>
+                <a class="btn btn-sm btn-outline-primary" href={% url "sign_up"%}>SIGN-UP</a>
+                </div>
+                <br>
+                </div>
+                {%if messages%}
+      {%for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{message}}
+        <button type="button" class="btn-close btn-outline-warning" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+      {%endfor%}
+    {%endif%}
+
+
+    {%if form.errors%}
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p>An error occured processing your creating your token...</p>
+                <button type="button" class="btn-close btn-outline-warning" data-bs-dismiss="alert" aria-label="close"></button>
+              </div>
+{%endif%}
+
+
+    
+                {%block login%}
+
+                {%endblock%}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+{%endblock %}       
