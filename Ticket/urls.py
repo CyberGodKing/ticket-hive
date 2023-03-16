@@ -17,11 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from buyticket import views
 from django.conf import settings
-from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('adminfupresocia2023/', admin.site.urls),
+    path('adminfupresocial/', admin.site.urls),
     path('', views.home, name='home'),
     path('previous_accesstoken', views.signin, name='sign_in'),
     path('ticket/accesstoken', views.signup, name='sign_up'),
