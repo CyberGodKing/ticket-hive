@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-qvp&bngan3%we+w#weu$84odayl%d3s5!5*dghx0j82!3p%1-b
 DEBUG = False
 
 ALLOWED_HOSTS = ["ticket-hive-production.up.railway.app","127.0.0.1"]
-CSRF_TRUSTED_ORIGINS =["https://ticket-hive-production.up.railway.app"]
+
 
 # Application definition
 
@@ -139,3 +139,4 @@ PAYSTACK_PUBLIC_KEY ="pk_live_e21085931c9a4bbdf0eded9ef8152a41f630cd8d"
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
+CSRF_TRUSTED_ORIGINS =["https://ticket-hive-production.up.railway.app"]
