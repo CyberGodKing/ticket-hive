@@ -134,7 +134,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PAYSTACK_SECRET_KEY ="sk_live_0e0da909e9a5cf32ec2a9737d8b31bae0e284f98"
+PAYSTACK_SECRET_KEY =""
 PAYSTACK_PUBLIC_KEY ="pk_live_e21085931c9a4bbdf0eded9ef8152a41f630cd8d"
 
 db_from_env = dj_database_url.config(conn_max_age=500)
