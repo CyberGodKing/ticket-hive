@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-qvp&bngan3%we+w#weu$84odayl%d3s5!5*dghx0j82!3p%1-b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["ticket-hive-production.up.railway.app","127.0.0.1"]
+ALLOWED_HOSTS = ["*","127.0.0.1"]
 
 
 # Application definition
