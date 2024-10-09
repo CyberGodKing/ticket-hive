@@ -1,6 +1,6 @@
 from email.policy import default
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
+#from phonenumber_field.modelfields import PhoneNumberField
 from django.conf import settings
 from django.core import validators
 from django.core.exceptions import ValidationError
@@ -34,7 +34,7 @@ class Agent(models.Model):
     bank = models.CharField(max_length=50,blank=False)
     whatsaap = models.URLField(blank=False)
     account = models.CharField(max_length=15,validators=[limit_value],blank=False)
-    phone = PhoneNumberField(blank=False)
+    #phone = PhoneNumberField(blank=False)
     def __str__(self):
         return self.name
     
